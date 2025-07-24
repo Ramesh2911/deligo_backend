@@ -13,8 +13,13 @@ export const login = async (req, res) => {
 				message: 'Email and password are required',
 			});
 		}
+		// const [rows] = await con.query(
+		// 	`SELECT * FROM hr_users WHERE email = ? AND role_id = 4 AND is_active = 'Y'`,
+		// 	[email]
+		// );
+
 		const [rows] = await con.query(
-			`SELECT * FROM hr_users WHERE email = ? AND role_id = 4 AND is_active = 'Y'`,
+			`SELECT * FROM hr_users WHERE email = ?`,
 			[email]
 		);
 
